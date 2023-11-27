@@ -1,0 +1,23 @@
+<table class="userTable">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Mobile Number</th>
+      <th>Date of Birth</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of totalData">
+      <td>{{ user.userName }}</td>
+      <td>{{ user.userEmail }}</td>
+      <td>{{ user.userMobile }}</td>
+      <td>{{ user.userEmail }}</td>
+      <td>
+        <button class="btnUpdate" (click)="updateUser(user)">Update</button>
+        <button class="btnDelete" (click)="deleteUser(user)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

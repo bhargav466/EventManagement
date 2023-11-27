@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="main-container" *ngFor="let venue of venueData">
+      <div class="icons">
+        <button class="editIcon" (click)="updateVenue(venue)">Edit</button>
+        <button class="deleteIcon" (click)="deleteVenue(venue)">Delete</button>
+      </div>
+      <div>
+        <h1>{{ venue.venueName }}</h1>
+      </div>
+      <div>
+        <h3>{{ venue.venueDescription }}</h3>
+      </div>
+      <div>{{ venue.venueCity }}</div>
+      <div>Owner Name : {{ venue.venueOwnerName }}</div>
+      <div>Owner Email: {{ venue.venueOwnerEmail }}</div>
+    </div>
+  </div>
+  

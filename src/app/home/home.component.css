@@ -1,0 +1,59 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 40px;
+  gap: 50px;
+  width: 100%;
+  height: 100px;
+}
+.main-conatiner {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  width: 400px;
+  height: fit-content;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 10px solid rgb(226, 139, 63);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  border-radius: 5%;
+  gap: 20px;
+  font-size: 18px;
+}
+
+/* .main-conatiner h1 {
+  color: rgb(255, 0, 0);
+} */
+
+.icons {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  flex-direction: row-reverse;
+}
+
+Button {
+  cursor: pointer;
+  padding: 6px;
+  border-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.lastContainer {
+  display: flex;
+}
+
+.registerButton {
+  margin-left: auto;
+  margin-right: 20px;
+  display: flex;
+}
+
+.viewInfo {
+  color: rgb(44, 217, 44);
+  font-size: 20px;
+  text-decoration: underline;
+}

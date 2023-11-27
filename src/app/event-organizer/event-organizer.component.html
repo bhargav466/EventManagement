@@ -1,0 +1,80 @@
+<div class="event-form">
+  <h2 *ngIf="eventState" class="successText">Event Created successfully!!!!!!!</h2>
+  <h2 class="main-heading">Create Event</h2>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="eventName">Event Name:</label>
+      <input
+        type="text"
+        id="eventName"
+        name="eventName"
+        [(ngModel)]="eventData.eventName"
+      />
+    </div>
+    <div class="form-group">
+      <label for="eventOrganizerName">Event Organizer Name:</label>
+      <input
+        type="text"
+        id="eventOrganizerName"
+        name="eventOrganizerName"
+        [(ngModel)]="eventData.eventOrganizerName"
+      />
+    </div>
+    <div class="form-group">
+      <label for="eventOrganizerEmail">Event Organizer Email:</label>
+      <input
+        type="text"
+        id="eventOrganizerEmail"
+        name="eventOrganizerEmail"
+        [(ngModel)]="eventData.eventOrganizerEmail"
+      />
+    </div>
+    <div class="form-group">
+      <label for="area">Area:</label>
+      <input type="text" id="area" name="area" [(ngModel)]="eventData.area" />
+    </div>
+    <div class="form-group">
+      <label for="city">City:</label>
+      <input type="text" id="city" name="city" [(ngModel)]="eventData.city" />
+    </div>
+    <div class="form-group">
+      <label for="zipcode">Zipcode:</label>
+      <input
+        type="text"
+        id="zipcode"
+        name="zipcode"
+        [(ngModel)]="eventData.zipcode"
+      />
+    </div>
+    <div class="form-group">
+      <label for="state">State:</label>
+      <input
+        type="text"
+        id="state"
+        name="state"
+        [(ngModel)]="eventData.state"
+      />
+    </div>
+    <div class="form-group">
+      <label for="eventDate">Event Date:</label>
+      <input
+        type="date"
+        id="eventDate"
+        name="eventDate"
+        [(ngModel)]="eventData.eventDate"
+      />
+    </div>
+    <div class="form-group">
+      <label for="eventDescription">Event Description:</label>
+      <textarea
+        id="eventDescription"
+        name="eventDescription"
+        [(ngModel)]="eventData.eventDescription"
+      ></textarea>
+    </div>
+    <div class="add-venue"><button>Add New Venue</button></div>
+    <div class="form-group">
+      <button type="submit">Submit</button>
+    </div>
+  </form>
+</div>

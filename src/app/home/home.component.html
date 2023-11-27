@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="main-conatiner" *ngFor="let event of eventData">
+    <div class="icons">
+      <button class="editIcon" (click)="updateEvent(event)">Edit</button>
+      <button class="deleteIcon" (click)="deleteEvent(event)">Delete</button>
+    </div>
+    <div>
+      <h1>{{ event.eventName }}</h1>
+    </div>
+    <div>
+      <h3>{{ event.eventDescription }}</h3>
+    </div>
+    <div>{{ event.eventDate | date : "medium" }}</div>
+    <div class="lastContainer">
+      <div>{{ event.city }}</div>
+      <div class="registerButton" routerLink="/user">
+        <button>Register</button>
+      </div>
+      <div class="viewInfo">viewInfo</div>
+    </div>
+  </div>
+</div>

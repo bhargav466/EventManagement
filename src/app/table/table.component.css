@@ -1,0 +1,35 @@
+.userTable {
+  width: 90%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  margin: 40px;
+}
+
+.userTable th, .userTable td {
+  padding: 8px;
+  text-align: left;
+}
+
+.userTable thead {
+  background-color: #007bff;
+  color: white;
+}
+
+.userTable tr {
+  border: 2px solid #ddd;
+  border-radius: 10px;
+}
+
+.btnUpdate, .btnDelete {
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.btnDelete {
+  background-color: #dc3545;
+}

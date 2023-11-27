@@ -1,0 +1,88 @@
+<!-- venue-form.component.html -->
+<div class="venue-form">
+  <h2 *ngIf="venueState" class="successText">Venue Updated successfully!!!!!!!</h2>
+    <h2>Update Venue</h2>
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="venueName">Venue Name:</label>
+        <input
+          type="text"
+          id="venueName"
+          name="venueName"
+          [(ngModel)]="venue.venueName"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="venueOwnerName">Venue Owner Name:</label>
+        <input
+          type="text"
+          id="venueOwnerName"
+          name="venueOwnerName"
+          [(ngModel)]="venue.venueOwnerName"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="venueOwnerEmail">Venue Owner Email:</label>
+        <input
+          type="text"
+          id="venueOwnerEmail"
+          name="venueOwnerEmail"
+          [(ngModel)]="venue.venueOwnerEmail"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="venueArea">Area:</label>
+        <input
+          type="text"
+          id="venueArea"
+          name="venueArea"
+          [(ngModel)]="venue.venueArea"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="venueZipcode">Zipcode:</label>
+        <input
+          type="text"
+          id="venueZipcode"
+          name="venueZipcode"
+          [(ngModel)]="venue.venueZipcode"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="venueState">State:</label>
+        <input
+          type="text"
+          id="venueState"
+          name="venueState"
+          [(ngModel)]="venue.venueState"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="venueCity">City:</label>
+        <input
+          type="text"
+          id="venueCity"
+          name="venueCity"
+          [(ngModel)]="venue.venueCity"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="venueDescription">Description:</label>
+        <textarea
+          id="venueDescription"
+          name="venueDescription"
+          [(ngModel)]="venue.venueDescription"
+          required
+        ></textarea>
+      </div>
+      <button type="submit">Save Venue</button>
+    </form>
+  </div>
+  
