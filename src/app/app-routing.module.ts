@@ -15,7 +15,7 @@ const routes: Routes = [
   {path:'user',component:UserComponent},
   {path:'addevent',component:EventOrganizerComponent},
   {path:'addvenue',component:VenueComponent},
-  {path:'viewvenue',component:TableComponent},
+  {path:'viewUsers',component:TableComponent},
   {path:"updateuser",component:UpdateUserComponent},
   {path:"home",component:HomeComponent},
   {path:"updateevent",component:UpdateEventComponent},

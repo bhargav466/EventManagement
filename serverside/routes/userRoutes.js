@@ -4,6 +4,8 @@ const router = express.Router();
 
 const userModel = require("../models/userModel");
 
+const mongoose = require('mongoose')
+
 router.post("/", async (req, res) => {
   const userDetails = await userModel.findOne({ userEmail: req.body.email });
   if (userDetails) {
@@ -16,6 +18,7 @@ router.post("/", async (req, res) => {
       userEmail: req.body.userEmail,
       userMobile: req.body.userMobile,
       userAddress: req.body.userAddress,
+      eventId:req.body.eventId
     });
     userData
       .save()
@@ -48,6 +51,28 @@ router.patch("/:userEmail", async (req, res) => {
   }
 });
 
+
+// getting all the users based on event id
+router.get("/:eventId", async (req, res) => {
+  try {
+
+    const eventId = req.params.eventId;
+    // Check if eventId is provided in the query
+    if (!eventId) {
+      return res.status(400).json({ message: "eventId parameter is required" });
+
+    }
+
+
+    // Use Mongoose find to retrieve users with the specified eventId
+    const usersWithEventId = await userModel.find({ eventId: eventId });
+    res.json(usersWithEventId);
+  } catch (err) {
+    console.log("Error while fetching user data:", err);
+    res.status(500).json({ message: "Internal server error" });
+  }
+});
+
 router.get("/", async (req, res) => {
   try {
     const allUsers = await userModel.find();
@@ -57,6 +82,10 @@ router.get("/", async (req, res) => {
     res.status(500).json({ message: "Internal server error" });
   }
 });
+
+
+
+
 
 router.delete("/:userEmail", async (req, res) => {
   

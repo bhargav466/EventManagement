@@ -52,3 +52,57 @@ button:hover {
 .main-heading {
   padding: 10px;
 }
+
+
+/* venue styles */
+/* ... your existing styles ... */
+
+.venue-dropdown {
+  position: relative;
+}
+
+input#venueInput {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box;
+  background-color: #fff;
+  cursor: pointer; /* Change cursor on input to indicate it's clickable */
+}
+
+.venue-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: calc(100% - 2px); /* Adjust width to match the input */
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-top: none;
+  border-radius: 0 0 5px 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: none; /* Initially hide the list */
+}
+
+.venue-dropdown:hover .venue-list {
+  display: block;
+   /* Show the list on hover */
+}
+
+.venue-list ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.venue-list li {
+  padding: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.venue-list li:hover {
+  background-color: #f0f0f0;
+}
+
+/* ... your existing styles ... */

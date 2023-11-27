@@ -11,13 +11,13 @@ export class NavbarComponent {
   constructor(private venueDataService: VenueDataService) {}
 
   ViewEventHandler() {
-    axios.get("http://localhost:4000/userRegistration")
-      .then(res => {
-        const data = res.data;
-        this.venueDataService.setTotalVenuesData(data);
-      })
-      .catch(error => {
-        console.error("Error while fetching user registration data:", error);
-      });
+    // axios.get("http://localhost:4000/userRegistration")
+    //   .then(res => {
+    //     const data = res.data;
+    //     this.venueDataService.setTotalVenuesData(data);
+    //   })
+    //   .catch(error => {
+    //     console.error("Error while fetching user registration data:", error);
+    //   });
   }
 }

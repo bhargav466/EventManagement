@@ -72,7 +72,39 @@
         [(ngModel)]="eventData.eventDescription"
       ></textarea>
     </div>
-    <div class="add-venue"><button>Add New Venue</button></div>
+    <!-- <div class="add-venue"><button>Add New Venue</button></div> -->
+
+    <!-- <div class="add-venue">
+      <button (click)="toggleVenueList()">Add New Venue</button>
+      <div *ngIf="showVenueList" class="venue-list">
+        <ul>
+          <li *ngFor="let venue of venues" (click)="onSelectVenue(venue)">
+            {{ venue.venueName }}
+          </li>
+        </ul>
+      </div>
+    </div> -->
+
+    <div class="form-group">
+      <label for="venueInput">Select Venue:</label>
+      <div class="venue-dropdown" (click)="toggleVenueList()">
+        <input
+          type="text"
+          id="venueInput"
+          name="venueInput"
+          [ngModel]="getVenueName()"
+          readonly
+        />
+        <div *ngIf="showVenueList" class="venue-list">
+          <ul>
+            <li *ngFor="let venue of venues" (click)="onSelectVenue(venue)">
+              {{ venue.venueName }}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
     <div class="form-group">
       <button type="submit">Submit</button>
     </div>

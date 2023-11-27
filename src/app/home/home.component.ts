@@ -4,6 +4,7 @@ import axios from 'axios';
 
 interface EventFormData {
   eventName: string;
+  _id:string;
   eventOrganizerName: string;
   eventOrganizerEmail: string;
   area: string;
@@ -55,6 +56,20 @@ export class HomeComponent implements OnInit {
     });
   }
 
+  async viewInfoButton(event:EventFormData) {
+        var eventID:String = event._id
+        console.log(typeof eventID)
+        try {
+          const response = await axios.get<EventFormData[]>(
+            `http://localhost:4000/userRegistration/${eventID}`
+          );
+         console.log(response.data);
+        } catch (err) {
+          console.error('Error while fetching all the events', err);
+        }
+      
+  }
+  
   async deleteEvent(event: EventFormData) {
     console.log(event.eventOrganizerEmail);
     try {

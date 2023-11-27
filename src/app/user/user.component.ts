@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import axios from 'axios';
 
 @Component({
@@ -14,17 +15,29 @@ export class UserComponent {
     userEmail: string;
     userMobile: string;
     userAddress: string;
+    eventId: String;
   } = {
     userName: '',
     userDob: '',
     userEmail: '',
     userMobile: '',
     userAddress: '',
+    eventId: '',
   };
+
+  constructor(private route: ActivatedRoute) {}
+
+  ngOnInit() {
+    this.route.params.subscribe((params) => {
+      this.formData.eventId = params['eventId'];
+      // If eventId is not part of route parameters, adjust accordingly
+    });
+  }
 
   async onSubmit() {
     // Here, you can use Axios to post the formData object to your server.
     //  const apiUrl = 'https://your-api-url.com'; // Replace with your API URL
+    console.log(this.formData, 'what happend');
 
     await axios
       .post('http://localhost:4000/userRegistration', this.formData)

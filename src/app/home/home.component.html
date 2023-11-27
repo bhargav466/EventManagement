@@ -13,10 +13,10 @@
     <div>{{ event.eventDate | date : "medium" }}</div>
     <div class="lastContainer">
       <div>{{ event.city }}</div>
-      <div class="registerButton" routerLink="/user">
+      <div class="registerButton" [routerLink]="['/user', { eventId: event._id }]">
         <button>Register</button>
       </div>
-      <div class="viewInfo">viewInfo</div>
+      <div class="viewInfo" (click)="viewInfoButton(event)" [routerLink]="['/viewUsers', { eventId: event._id }]">viewInfo</div>
     </div>
   </div>
 </div>
