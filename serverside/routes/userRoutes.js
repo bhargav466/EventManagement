@@ -36,6 +36,7 @@ router.post("/", async (req, res) => {
 router.patch("/:userEmail", async (req, res) => {
   try {
     const userEmail = req.params.userEmail;
+    console.log(userEmail)
     const updatedUser = await userModel.findOneAndUpdate(
       { userEmail }, // Find the user by email
       { $set: req.body }, // Use $set to update only the fields provided in the request

@@ -53,7 +53,6 @@ export class ViewVenueComponent implements OnInit {
   }
 
   async deleteVenue(venue: VenueFormData) {
-    console.log(venue.venueOwnerEmail);
     try {
       await axios.delete(`http://localhost:4000/venueRegistration/${venue.venueOwnerEmail}`);
       console.log("Venue deleted successfully" , venue);

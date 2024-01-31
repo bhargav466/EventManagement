@@ -26,6 +26,8 @@
   /* background-color: rgb(226, 139, 63); */
   /* background-color: rgb(77, 63, 226); */
   color: #ffffff;
+  font-size: medium;
+  font-weight: bold;
   border-radius: 10px;
   border: white;
   cursor: pointer;

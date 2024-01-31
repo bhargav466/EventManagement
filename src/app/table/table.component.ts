@@ -32,7 +32,6 @@ export class TableComponent implements OnInit {
     });
 
     this.route.params.subscribe((params) => {
-      console.log(params, 'first checking these params');
       this.eventId = params['eventId'];
       // If eventId is not part of route parameters, adjust accordingly
     });
@@ -43,15 +42,12 @@ export class TableComponent implements OnInit {
 
   async fetchData() {
     try {
-      console.log(this.eventId, 'bhargav raina');
       const eventID = this.eventId;
 
       const response = await axios.get(
         `http://localhost:4000/userRegistration/${eventID}`
       );
       const data = response.data;
-
-      console.log(data, 'this is all users');
       this.totalData = data;
     } catch (error) {
       console.error('Error while fetching user registration data:', error);
@@ -66,6 +62,7 @@ export class TableComponent implements OnInit {
         userMobile: user.userMobile,
         userAddress: user.userAddress,
         userDob: user.userDob,
+        eventId:user.eventId
       },
     });
   }
@@ -75,12 +72,11 @@ export class TableComponent implements OnInit {
     await axios
       .delete(`http://localhost:4000/userRegistration/${user.userEmail}`)
       .then((res) => {
-        console.log(user, 'deleted data is');
+        console.log('user deleted successfully',user);
         axios
           .get(`http://localhost:4000/userRegistration/${eventId}`)
           .then((res) => {
             const data = res.data;
-            console.log(data, 'bhargav raina');
             this.totalData = data;
           })
           .catch((error) => {

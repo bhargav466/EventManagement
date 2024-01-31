@@ -12,12 +12,13 @@ import { ViewVenueComponent } from './view-venue/view-venue.component';
 
 const routes: Routes = [
   // {path:'',component:NavbarComponent},
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  {path:"home",component:HomeComponent},
   {path:'user',component:UserComponent},
   {path:'addevent',component:EventOrganizerComponent},
   {path:'addvenue',component:VenueComponent},
   {path:'viewUsers',component:TableComponent},
   {path:"updateuser",component:UpdateUserComponent},
-  {path:"home",component:HomeComponent},
   {path:"updateevent",component:UpdateEventComponent},
   {path:"updatevenue",component:UpdateVenueComponent},
   {path:"viewallvenues",component:ViewVenueComponent}

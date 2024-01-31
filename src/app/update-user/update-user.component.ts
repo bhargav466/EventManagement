@@ -15,13 +15,17 @@ export class UpdateUserComponent {
     userMobile: string;
     userDob: string;
     userAddress: string;
+    eventId: String;
   } = {
     userName: '',
     userEmail: '',
     userMobile: '',
     userDob: '',
     userAddress: '',
+    eventId: '',
   };
+
+  userEmail: string = '';
 
   constructor(private route: ActivatedRoute) {}
 
@@ -32,7 +36,8 @@ export class UpdateUserComponent {
       this.formData.userMobile = params['userMobile'] || '';
       this.formData.userAddress = params['userAddress'] || '';
       this.formData.userDob = params['userDob'] || '';
-      console.log(this.formData, 'HEllo world');
+      this.formData.eventId = params['eventId'];
+      this.userEmail = params['userEmail'] || ''
     });
   }
 
@@ -45,10 +50,8 @@ export class UpdateUserComponent {
       userDob: this.formData.userDob,
     };
 
-    const userEmail = this.formData.userEmail;
-
     await axios
-      .patch(`http://localhost:4000/userRegistration/${userEmail}`, updateData)
+      .patch(`http://localhost:4000/userRegistration/${this.userEmail}`, updateData)
       .then((response) => {
         console.log('User data updated successfully:', response.data);
         this.userState = 'success';

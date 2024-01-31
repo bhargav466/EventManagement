@@ -32,16 +32,21 @@ eventRouter.post("/", async (req, res) => {
 eventRouter.patch("/:eventOrganizerEmail", async (req, res) => {
   try {
     const eventOrganizerEmail = req.params.eventOrganizerEmail;
-    console.log(req.body, eventOrganizerEmail);
+   
+  
     const updateEvent = await eventModel.findOneAndUpdate(
-      { eventOrganizerEmail },
+      { eventOrganizerEmail },  
       { $set: req.body },
       { new: true }
     );
+    console.log(req.body, eventOrganizerEmail);
+    console.log("---------------------------------------");
+    console.log(updateEvent);
+
     if (!eventOrganizerEmail) {
-      return res.status(404).json({ message: "User not found" });
+      return res.status(404).json({ message: "Event not found" });
     }
-    res.json(eventOrganizerEmail);
+    res.json(updateEvent);
   } catch (err) {
     console.log("Error While updating Event", err);
     res.status(500).json({ message: "Internal server error" });

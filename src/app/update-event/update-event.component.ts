@@ -46,8 +46,8 @@ export class UpdateEventComponent {
         (this.eventData.zipcode = params['zipcode']),
         (this.eventData.state = params['state']),
         (this.eventData.eventDate = params['eventDate']),
-        (this.eventData.eventDescription = params['eventDescription']),
-        console.log('Event Organizer Data:', this.eventData);
+        (this.eventData.eventDescription = params['eventDescription']);
+        // console.log('Event Organizer Data:', this.eventData);
     });
   }
 
@@ -66,13 +66,12 @@ export class UpdateEventComponent {
     };
 
     const eventOrganizerEmail = this.eventData.eventOrganizerEmail;
-
     try {
       const response = await axios.patch(
         `http://localhost:4000/eventRegistration/${eventOrganizerEmail}`,
         updateEventData
       );
-      console.log('Event data updated successfully:', response.data);
+      console.log('Event data updated successfully:', response);
       this.eventState = 'success';
     } catch (error) {
       console.error('Error while updating event data:', error);

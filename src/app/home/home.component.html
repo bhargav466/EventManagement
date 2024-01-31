@@ -13,6 +13,7 @@
     <div>{{ event.eventDate | date : "medium" }}</div>
     <div class="lastContainer">
       <div>{{ event.city }}</div>
+      <div class="locationImage" (click)="openGoogleMaps(event)"><img class="locationImage" src="../../assets/images/location.png" /></div>
       <div class="registerButton" [routerLink]="['/user', { eventId: event._id }]">
         <button>Register</button>
       </div>
